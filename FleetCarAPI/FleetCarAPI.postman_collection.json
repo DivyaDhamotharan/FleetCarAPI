@@ -1,0 +1,358 @@
+{
+	"info": {
+		"_postman_id": "304c8975-31ee-477d-a49b-a5f6b7695071",
+		"name": "FleetCarAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "Car",
+					"item": [
+						{
+							"name": "/api/Car/GetCarDetails",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJuYmYiOjE2ODEyMDA4NzIsImV4cCI6MTY4MTIwMTQ3MiwiaWF0IjoxNjgxMjAwODcyLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjcwIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzI3MCJ9.JU7Fwz6qvasJAkulJi6OBPc5GRMQLLf0bo-84hE59RdyOx_QywMfiPt1f-uxUpElcpg_oEpb-rTvS-xmahBJYA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Car/GetCarDetails?brand=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Car",
+										"GetCarDetails"
+									],
+									"query": [
+										{
+											"key": "brand",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Car/GetCarDetails?brand=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Car",
+												"GetCarDetails"
+											],
+											"query": [
+												{
+													"key": "brand",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Car/UpsertCarDetails",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"make\": \"BMW\",\n    \"brand\": \"A1\",\n    \"model\": \"Series1\",\n    \"transmission\": \"Speed\",\n    \"color\": \"Black\",\n    \"year\": \"2023\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Car/UpsertCarDetails?id=47F45E75-A336-4055-8C1E-0CAF88790E48",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Car",
+										"UpsertCarDetails"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "47F45E75-A336-4055-8C1E-0CAF88790E48"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"make\": \"BMW\",\n    \"brand\": \"A2\",\n    \"model\": \"TEST\",\n    \"transmission\": \"Series1\",\n    \"color\": \"Black\",\n    \"year\": \"2023\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Car/UpsertCarDetails?id=0",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Car",
+												"UpsertCarDetails"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "0"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Car/AddCarModel",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"BMW\",\n    \"description\": \"Car desc\",\n    \"models\": \"A1\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Car/AddCarModel",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Car",
+										"AddCarModel"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"models\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Car/AddCarModel",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Car",
+												"AddCarModel"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "/api/Authentication/Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJuYmYiOjE2ODEyMDA4NzIsImV4cCI6MTY4MTIwMTQ3MiwiaWF0IjoxNjgxMjAwODcyLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjcwIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzI3MCJ9.JU7Fwz6qvasJAkulJi6OBPc5GRMQLLf0bo-84hE59RdyOx_QywMfiPt1f-uxUpElcpg_oEpb-rTvS-xmahBJYA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userName\": \"test@gmail.com\",\n    \"password\": \"test\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Authentication/Login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Authentication",
+								"Login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userName\": \"<string>\",\n    \"password\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Authentication/Login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Authentication",
+										"Login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJuYmYiOjE2ODEyMDA4NzIsImV4cCI6MTY4MTIwMTQ3MiwiaWF0IjoxNjgxMjAwODcyLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjcwIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzI3MCJ9.JU7Fwz6qvasJAkulJi6OBPc5GRMQLLf0bo-84hE59RdyOx_QywMfiPt1f-uxUpElcpg_oEpb-rTvS-xmahBJYA",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://localhost:7270"
+		}
+	]
+}
